@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Servers</title>
+</head>
+<body>
+<h1>Accessible Servers</h1>
+<ul>
+    <li th:each="server : ${servers}" th:text="${server}"></li>
+</ul>
+</body>
+</html>
