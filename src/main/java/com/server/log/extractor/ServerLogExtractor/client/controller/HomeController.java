@@ -1,4 +1,4 @@
-package com.server.log.extractor.ServerLogExtractor.controller;
+package com.server.log.extractor.ServerLogExtractor.client.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

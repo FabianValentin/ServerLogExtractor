@@ -1,5 +1,6 @@
-package com.server.log.extractor.ServerLogExtractor.controller;
+package com.server.log.extractor.ServerLogExtractor.client.controller;
 
+import com.server.log.extractor.ServerLogExtractor.client.service.ClientService;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Controller;
@@ -10,7 +11,16 @@ import java.util.Arrays;
 import java.util.List;
 
 @Controller
-public class ServerController {
+public class ClientController {
+
+    private final ClientService clientService;
+
+    public ClientController(ClientService logClientService) {
+        this.clientService = logClientService;
+    }
+
+    private String hostname = "localhost";
+    private int port = 12345;
 
     @GetMapping("/servers")
     public String listServers(Model model, Authentication authentication) {
@@ -23,6 +33,18 @@ public class ServerController {
         }
 
         model.addAttribute("servers", servers);
+
+        // Connect to the log server
+        clientService.connect();
+
         return "servers";
     }
+
+        @GetMapping("/logs")
+    public String showLogs() {
+        // Connect to the log server
+        clientService.connect();
+        return "logs";
+    }
+
 }

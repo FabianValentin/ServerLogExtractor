@@ -1,4 +1,4 @@
-package com.server.log.extractor.ServerLogExtractor.security;
+package com.server.log.extractor.ServerLogExtractor.client.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +19,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
                         .requestMatchers("/main.css").permitAll()
                         .requestMatchers( "/favicon.ico").permitAll()
+                        .requestMatchers("/gs-guide-websocket/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
@@ -47,4 +48,5 @@ public class SecurityConfig {
 
         return new InMemoryUserDetailsManager(user, admin);
     }
+
 }
