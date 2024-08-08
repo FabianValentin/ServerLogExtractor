@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head>
     <meta charset="UTF-8" http-equiv="refresh" content="10">
     <title>Server Monitoring Tool</title>
@@ -81,11 +83,13 @@
             </li>
         </ul>
         <div class="account-info">
-            <div class="account-info-picture">
-                <img src="https://images.unsplash.com/photo-1527736947477-2790e28f3443?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTE2fHx3b21hbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
-                     alt="Account">
+            <div class="account-info-picture" sec:authorize="hasRole('ADMIN')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Eo_circle_deep-purple_white_letter-a.svg" alt="Admin Image">
             </div>
-            <div class="account-info-name">Monica G.</div>
+            <div class="account-info-picture" sec:authorize="hasRole('USER')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Eo_circle_deep-purple_white_letter-u.svg" alt="User Image">
+            </div>
+            <div class="account-info-name"><span th:text="${#authentication.getName()}"/></div>
             <button class="account-info-more">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -221,7 +225,7 @@
                     </button>
                 </div>
             </div>
-            <div class="products-row" onclick="location.href='server-logs';" style="cursor: pointer;">
+            <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row" onclick="location.href='server-logs';" style="cursor: pointer;">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -245,7 +249,7 @@
                 <div class="product-cell stock"><span class="cell-label">Stock:</span>36</div>
                 <div class="product-cell price"><span class="cell-label">Price:</span>$560</div>
             </div>
-            <div class="products-row">
+            <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -269,7 +273,7 @@
                 <div class="product-cell stock"><span class="cell-label">Stock:</span>46</div>
                 <div class="product-cell price"><span class="cell-label">Price:</span>$710</div>
             </div>
-            <div class="products-row">
+            <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -293,7 +297,7 @@
                 <div class="product-cell stock"><span class="cell-label">Stock:</span>56</div>
                 <div class="product-cell price"><span class="cell-label">Price:</span>$360</div>
             </div>
-            <div class="products-row">
+            <div sec:authorize="hasRole('ADMIN')" class="products-row">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -317,7 +321,7 @@
                 <div class="product-cell stock"><span class="cell-label">Stock:</span>66</div>
                 <div class="product-cell price"><span class="cell-label">Price:</span>$260</div>
             </div>
-            <div class="products-row">
+            <div sec:authorize="hasRole('ADMIN')" class="products-row">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -341,7 +345,7 @@
                 <div class="product-cell stock"><span class="cell-label">Stock:</span>40</div>
                 <div class="product-cell price"><span class="cell-label">Price:</span>$350</div>
             </div>
-            <div class="products-row">
+            <div sec:authorize="hasRole('ADMIN')" class="products-row">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -365,7 +369,7 @@
                 <div class="product-cell stock"><span class="cell-label">Stock:</span>44</div>
                 <div class="product-cell price"><span class="cell-label">Price:</span>$160</div>
             </div>
-            <div class="products-row">
+            <div sec:authorize="hasRole('USER')" class="products-row">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -389,7 +393,7 @@
                 <div class="product-cell stock"><span class="cell-label">Stock:</span>45</div>
                 <div class="product-cell price"><span class="cell-label">Price:</span>$340</div>
             </div>
-            <div class="products-row">
+            <div sec:authorize="hasRole('ADMIN')" class="products-row">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -413,7 +417,7 @@
                 <div class="product-cell stock"><span class="cell-label">Stock:</span>40</div>
                 <div class="product-cell price"><span class="cell-label">Price:</span>$350</div>
             </div>
-            <div class="products-row">
+            <div sec:authorize="hasRole('USER')" class="products-row">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -437,7 +441,7 @@
                 <div class="product-cell stock"><span class="cell-label">Stock:</span>46</div>
                 <div class="product-cell price"><span class="cell-label">Price:</span>$60</div>
             </div>
-            <div class="products-row">
+            <div sec:authorize="hasRole('USER')" class="products-row">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -461,7 +465,7 @@
                 <div class="product-cell stock"><span class="cell-label">Stock:</span>16</div>
                 <div class="product-cell price"><span class="cell-label">Price:</span>$270</div>
             </div>
-            <div class="products-row">
+            <div sec:authorize="hasRole('ADMIN')" class="products-row">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -485,7 +489,7 @@
                 <div class="product-cell stock"><span class="cell-label">Stock:</span>16</div>
                 <div class="product-cell price"><span class="cell-label">Price:</span>$230</div>
             </div>
-            <div class="products-row">
+            <div sec:authorize="hasRole('USER')" class="products-row">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -509,7 +513,7 @@
                 <div class="product-cell stock"><span class="cell-label">Stock:</span>46</div>
                 <div class="product-cell price"><span class="cell-label">Price:</span>$252</div>
             </div>
-            <div class="products-row">
+            <div sec:authorize="hasRole('USER')" class="products-row">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
