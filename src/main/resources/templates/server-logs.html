@@ -95,14 +95,16 @@
         <form class="space-y-6" th:action="@{/logout}" method="POST">
             <div class="account-info">
                 <div class="account-info-picture" sec:authorize="hasRole('ADMIN')">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Eo_circle_deep-purple_white_letter-a.svg" alt="Admin Image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Eo_circle_deep-purple_white_letter-a.svg"
+                         alt="Admin Image">
                 </div>
                 <div class="account-info-picture" sec:authorize="hasRole('USER')">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Eo_circle_deep-purple_white_letter-u.svg" alt="User Image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Eo_circle_deep-purple_white_letter-u.svg"
+                         alt="User Image">
                 </div>
                 <div class="account-info-name"><span th:text="${#authentication.getName()}"/></div>
                 <button class="account-info-more">
-                    <img src="logout.png" alt="Logout" title="Logout" width="40px" height="40px" />
+                    <img src="logout.png" alt="Logout" title="Logout" width="40px" height="40px"/>
                 </button>
             </div>
         </form>
@@ -112,6 +114,24 @@
             <h1 class="app-content-headerText">Server Logs</h1>
         </div>
 
+        <div class="gridView products-row" style="margin-top: 30px; margin-left: 3px;">
+            <div class="product-cell image">
+                <img src="tomcat.png"
+                     alt="server">
+            </div>
+
+            <div class="gridView product-cell" style="display: block !important; margin: 0 60% 15px 5px; width: 200px">
+                <div class="product-cell category"><span class="cell-label">Name:</span>Tomcat-US-1</div>
+                <div class="product-cell category"><span class="cell-label">Region:</span>North America</div>
+                <div class="product-cell status-cell">
+                    <span class="cell-label">Status:</span>
+                    <span class="status active">Active</span>
+                </div>
+                <div class="product-cell sales"><span class="cell-label">Uptime:</span>11</div>
+                <div class="product-cell stock"><span class="cell-label">Restarts:</span>36</div>
+                <div class="product-cell price"><span class="cell-label">Exceptions:</span>160</div>
+            </div>
+        </div>
         <div class="button-container">
             <button onClick="displayServerLogs()">Show Logs</button>
             <button onClick="stopServerLogs()">Stop Logs</button>
@@ -119,7 +139,7 @@
         </div>
         <div>
             <textarea id="TerminalTextArea"
-                      style="border: 1px solid grey; width:100%; height: 200px;">
+                      style="border: 1px solid grey; width:100%; height: 400px;">
             </textarea>
         </div>
     </div>
