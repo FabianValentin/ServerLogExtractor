@@ -89,7 +89,7 @@
             <button class="app-content-headerButton">Add Product</button>-->
         </div>
         <div class="app-content-actions">
-            <input class="search-bar" placeholder="Search..." type="text">
+            <input id="searchBar" class="search-bar" placeholder="Search..." type="text">
             <div class="app-content-actions-wrapper">
                 <div class="filter-button-wrapper">
                     <button class="action-button filter jsFilter"><span>Filter</span>
@@ -191,10 +191,10 @@
                 </div>
                 <div class="product-cell sales">
                     <label class="cell-label">Uptime:</label>
-                    <span id="timer2">01:00:00</span>
+                    <span id="timer2">0d 00:18:31</span>
                 </div>
-                <div class="product-cell stock"><span class="cell-label">Restarts:</span>36</div>
-                <div class="product-cell price"><span class="cell-label">Exceptions:</span>160</div>
+                <div class="product-cell stock"><span class="cell-label">Restarts:</span>0</div>
+                <div class="product-cell price"><span class="cell-label">Exceptions:</span>2</div>
             </div>
             <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row">
                 <button class="cell-more-button">
@@ -216,9 +216,12 @@
                     <span class="cell-label">Status:</span>
                     <span class="status disabled">Offline</span>
                 </div>
-                <div class="product-cell sales"><span class="cell-label">Uptime:</span>6</div>
-                <div class="product-cell stock"><span class="cell-label">Restarts:</span>46</div>
-                <div class="product-cell price"><span class="cell-label">Exceptions:</span>210</div>
+                <div class="product-cell sales">
+                    <label class="cell-label">Uptime:</label>
+                    <span id="timer3">1d 01:14:05</span>
+                </div>
+                <div class="product-cell stock"><span class="cell-label">Restarts:</span>2</div>
+                <div class="product-cell price"><span class="cell-label">Exceptions:</span>5</div>
             </div>
             <div sec:authorize="hasAnyRole('ADMIN')" class="products-row">
                 <button class="cell-more-button">
@@ -240,9 +243,12 @@
                     <span class="cell-label">Status:</span>
                     <span class="status active">Online</span>
                 </div>
-                <div class="product-cell sales"><span class="cell-label">Uptime:</span>61</div>
-                <div class="product-cell stock"><span class="cell-label">Restarts:</span>56</div>
-                <div class="product-cell price"><span class="cell-label">Exceptions:</span>160</div>
+                <div class="product-cell sales">
+                    <label class="cell-label">Uptime:</label>
+                    <span id="timer4">10d 01:13:26</span>
+                </div>
+                <div class="product-cell stock"><span class="cell-label">Restarts:</span>4</div>
+                <div class="product-cell price"><span class="cell-label">Exceptions:</span>2</div>
             </div>
             <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row">
                 <button class="cell-more-button">
@@ -264,9 +270,12 @@
                     <span class="cell-label">Status:</span>
                     <span class="status disabled">Offline</span>
                 </div>
-                <div class="product-cell sales"><span class="cell-label">Uptime:</span>41</div>
-                <div class="product-cell stock"><span class="cell-label">Restarts:</span>66</div>
-                <div class="product-cell price"><span class="cell-label">Exceptions:</span>160</div>
+                <div class="product-cell sales">
+                    <label class="cell-label">Uptime:</label>
+                    <span>0d 19:45:57</span>
+                </div>
+                <div class="product-cell stock"><span class="cell-label">Restarts:</span>2</div>
+                <div class="product-cell price"><span class="cell-label">Exceptions:</span>41</div>
             </div>
             <div sec:authorize="hasRole('ADMIN')" class="products-row">
                 <button class="cell-more-button">
@@ -288,9 +297,12 @@
                     <span class="cell-label">Status:</span>
                     <span class="status active">Online</span>
                 </div>
-                <div class="product-cell sales"><span class="cell-label">Uptime:</span>32</div>
-                <div class="product-cell stock"><span class="cell-label">Restarts:</span>40</div>
-                <div class="product-cell price"><span class="cell-label">Exceptions:</span>150</div>
+                <div class="product-cell sales">
+                    <label class="cell-label">Uptime:</label>
+                    <span id="timer5">12d 09:26:06</span>
+                </div>
+                <div class="product-cell stock"><span class="cell-label">Restarts:</span>0</div>
+                <div class="product-cell price"><span class="cell-label">Exceptions:</span>2</div>
             </div>
             <div sec:authorize="hasRole('ADMIN')" class="products-row">
                 <button class="cell-more-button">
@@ -310,11 +322,14 @@
                 <div class="product-cell category"><span class="cell-label">Category:</span>Asia</div>
                 <div class="product-cell status-cell">
                     <span class="cell-label">Status:</span>
-                    <span class="status disabled">Offline</span>
+                    <span class="status active">Online</span>
                 </div>
-                <div class="product-cell sales"><span class="cell-label">Uptime:</span>22</div>
-                <div class="product-cell stock"><span class="cell-label">Restarts:</span>44</div>
-                <div class="product-cell price"><span class="cell-label">Exceptions:</span>60</div>
+                <div class="product-cell sales">
+                    <label class="cell-label">Uptime:</label>
+                    <span id="timer6">3d 02:33:26</span>
+                </div>
+                <div class="product-cell stock"><span class="cell-label">Restarts:</span>1</div>
+                <div class="product-cell price"><span class="cell-label">Exceptions:</span>3</div>
             </div>
             <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row">
                 <button class="cell-more-button">
@@ -336,9 +351,12 @@
                     <span class="cell-label">Status:</span>
                     <span class="status active">Online</span>
                 </div>
-                <div class="product-cell sales"><span class="cell-label">Uptime:</span>23</div>
-                <div class="product-cell stock"><span class="cell-label">Restarts:</span>45</div>
-                <div class="product-cell price"><span class="cell-label">Exceptions:</span>140</div>
+                <div class="product-cell sales">
+                    <label class="cell-label">Uptime:</label>
+                    <span id="timer7">2d 12:44:17</span>
+                </div>
+                <div class="product-cell stock"><span class="cell-label">Restarts:</span>3</div>
+                <div class="product-cell price"><span class="cell-label">Exceptions:</span>15</div>
             </div>
             <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row">
                 <button class="cell-more-button">
@@ -358,11 +376,14 @@
                 <div class="product-cell category"><span class="cell-label">Category:</span>North America</div>
                 <div class="product-cell status-cell">
                     <span class="cell-label">Status:</span>
-                    <span class="status active">Online</span>
+                    <span class="status disabled">Offline</span>
                 </div>
-                <div class="product-cell sales"><span class="cell-label">Uptime:</span>32</div>
-                <div class="product-cell stock"><span class="cell-label">Restarts:</span>40</div>
-                <div class="product-cell price"><span class="cell-label">Exceptions:</span>150</div>
+                <div class="product-cell sales">
+                    <label class="cell-label">Uptime:</label>
+                    <span>0d 08:23:48</span>
+                </div>
+                <div class="product-cell stock"><span class="cell-label">Restarts:</span>2</div>
+                <div class="product-cell price"><span class="cell-label">Exceptions:</span>7</div>
             </div>
             <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row">
                 <button class="cell-more-button">
@@ -384,9 +405,12 @@
                     <span class="cell-label">Status:</span>
                     <span class="status active">Online</span>
                 </div>
-                <div class="product-cell sales"><span class="cell-label">Uptime:</span>24</div>
-                <div class="product-cell stock"><span class="cell-label">Restarts:</span>46</div>
-                <div class="product-cell price"><span class="cell-label">Exceptions:</span>60</div>
+                <div class="product-cell sales">
+                    <label class="cell-label">Uptime:</label>
+                    <span id="timer8">1d 17:02:59</span>
+                </div>
+                <div class="product-cell stock"><span class="cell-label">Restarts:</span>0</div>
+                <div class="product-cell price"><span class="cell-label">Exceptions:</span>13</div>
             </div>
             <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row">
                 <button class="cell-more-button">
@@ -408,9 +432,12 @@
                     <span class="cell-label">Status:</span>
                     <span class="status active">Online</span>
                 </div>
-                <div class="product-cell sales"><span class="cell-label">Uptime:</span>41</div>
-                <div class="product-cell stock"><span class="cell-label">Restarts:</span>16</div>
-                <div class="product-cell price"><span class="cell-label">Exceptions:</span>170</div>
+                <div class="product-cell sales">
+                    <label class="cell-label">Uptime:</label>
+                    <span id="timer9">4d 02:57:23</span>
+                </div>
+                <div class="product-cell stock"><span class="cell-label">Restarts:</span>6</div>
+                <div class="product-cell price"><span class="cell-label">Exceptions:</span>31</div>
             </div>
             <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row">
                 <button class="cell-more-button">
@@ -432,9 +459,9 @@
                     <span class="cell-label">Status:</span>
                     <span class="status disabled">Offline</span>
                 </div>
-                <div class="product-cell sales"><span class="cell-label">Uptime:</span>52</div>
-                <div class="product-cell stock"><span class="cell-label">Restarts:</span>16</div>
-                <div class="product-cell price"><span class="cell-label">Exceptions:</span>130</div>
+                <div class="product-cell sales"><span class="cell-label">Uptime:</span>4d 02:57:23</div>
+                <div class="product-cell stock"><span class="cell-label">Restarts:</span>3</div>
+                <div class="product-cell price"><span class="cell-label">Exceptions:</span>15</div>
             </div>
             <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row">
                 <button class="cell-more-button">
@@ -456,9 +483,12 @@
                     <span class="cell-label">Status:</span>
                     <span class="status active">Online</span>
                 </div>
-                <div class="product-cell sales"><span class="cell-label">Uptime:</span>21</div>
-                <div class="product-cell stock"><span class="cell-label">Restarts:</span>46</div>
-                <div class="product-cell price"><span class="cell-label">Exceptions:</span>152</div>
+                <div class="product-cell sales">
+                    <label class="cell-label">Uptime:</label>
+                    <span id="timer1">0d 20:42:02</span>
+                </div>
+                <div class="product-cell stock"><span class="cell-label">Restarts:</span>0</div>
+                <div class="product-cell price"><span class="cell-label">Exceptions:</span>0</div>
             </div>
             <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row">
                 <button class="cell-more-button">
@@ -480,14 +510,18 @@
                     <span class="cell-label">Status:</span>
                     <span class="status active">Online</span>
                 </div>
-                <div class="product-cell sales"><span class="cell-label">Uptime:</span>32</div>
-                <div class="product-cell stock"><span class="cell-label">Restarts:</span>40</div>
-                <div class="product-cell price"><span class="cell-label">Exceptions:</span>150</div>
+                <div class="product-cell sales">
+                    <label class="cell-label">Uptime:</label>
+                    <span id="timer10">2d 05:03:14</span>
+                </div>
+                <div class="product-cell stock"><span class="cell-label">Restarts:</span>2</div>
+                <div class="product-cell price"><span class="cell-label">Exceptions:</span>32</div>
             </div>
         </div>
     </div>
 </div>
 <!-- partial -->
+<script src="search-bar-filter.js"></script>
 <script src="filter.js"></script>
 <script src="script.js"></script>
 <script src="timer.js"></script>
