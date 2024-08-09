@@ -20,4 +20,9 @@ public class HomeController {
     public String customLogout() {
         return "login-dark";
     }
+
+    @GetMapping("/statistics")
+    public String getStatistics() {
+        return "statistics";
+    }
 }

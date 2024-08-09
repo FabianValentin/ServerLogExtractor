@@ -80,8 +80,8 @@
                     <span>Servers</span>
                 </a>
             </li>
-            <li class="sidebar-list-item">
-                <a href="#">
+            <li class="sidebar-list-item" sec:authorize="hasRole('ADMIN')">
+                <a href="statistics">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="feather feather-pie-chart">
@@ -121,8 +121,8 @@
             </div>
 
             <div class="gridView product-cell" style="display: block !important; margin: 0 60% 15px 5px; width: 200px">
-                <div class="product-cell category"><span class="cell-label">Name:</span>Tomcat-US-1</div>
-                <div class="product-cell category"><span class="cell-label">Region:</span>North America</div>
+                <div class="product-cell"><span class="cell-label">Name:</span>Tomcat-US-1</div>
+                <div class="product-cell"><span class="cell-label">Region:</span>North America</div>
                 <div class="product-cell status-cell">
                     <span class="cell-label">Status:</span>
                     <span class="status active">Active</span>

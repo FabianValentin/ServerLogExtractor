@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <!-- For a 10 seconds automatic refresh of the page -->
+    <!--<meta charset="UTF-8" http-equiv="refresh" content="10">-->
+    <meta charset="UTF-8"/>
+    <title>Server Monitoring Tool</title>
+    <link th:href="@{/favicon.ico}" rel="icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="app-container">
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="app-icon">
+                <!--<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor"
+                          d="M507.606 371.054a187.217 187.217 0 00-23.051-19.606c-17.316 19.999-37.648 36.808-60.572 50.041-35.508 20.505-75.893 31.452-116.875 31.711 21.762 8.776 45.224 13.38 69.396 13.38 49.524 0 96.084-19.286 131.103-54.305a15 15 0 004.394-10.606 15.028 15.028 0 00-4.395-10.615zM27.445 351.448a187.392 187.392 0 00-23.051 19.606C1.581 373.868 0 377.691 0 381.669s1.581 7.793 4.394 10.606c35.019 35.019 81.579 54.305 131.103 54.305 24.172 0 47.634-4.604 69.396-13.38-40.985-.259-81.367-11.206-116.879-31.713-22.922-13.231-43.254-30.04-60.569-50.039zM103.015 375.508c24.937 14.4 53.928 24.056 84.837 26.854-53.409-29.561-82.274-70.602-95.861-94.135-14.942-25.878-25.041-53.917-30.063-83.421-14.921.64-29.775 2.868-44.227 6.709-6.6 1.576-11.507 7.517-11.507 14.599 0 1.312.172 2.618.512 3.885 15.32 57.142 52.726 100.35 96.309 125.509zM324.148 402.362c30.908-2.799 59.9-12.454 84.837-26.854 43.583-25.159 80.989-68.367 96.31-125.508.34-1.267.512-2.573.512-3.885 0-7.082-4.907-13.023-11.507-14.599-14.452-3.841-29.306-6.07-44.227-6.709-5.022 29.504-15.121 57.543-30.063 83.421-13.588 23.533-42.419 64.554-95.862 94.134zM187.301 366.948c-15.157-24.483-38.696-71.48-38.696-135.903 0-32.646 6.043-64.401 17.945-94.529-16.394-9.351-33.972-16.623-52.273-21.525-8.004-2.142-16.225 2.604-18.37 10.605-16.372 61.078-4.825 121.063 22.064 167.631 16.325 28.275 39.769 54.111 69.33 73.721zM324.684 366.957c29.568-19.611 53.017-45.451 69.344-73.73 26.889-46.569 38.436-106.553 22.064-167.631-2.145-8.001-10.366-12.748-18.37-10.605-18.304 4.902-35.883 12.176-52.279 21.529 11.9 30.126 17.943 61.88 17.943 94.525.001 64.478-23.58 111.488-38.702 135.912zM266.606 69.813c-2.813-2.813-6.637-4.394-10.615-4.394a15 15 0 00-10.606 4.394c-39.289 39.289-66.78 96.005-66.78 161.231 0 65.256 27.522 121.974 66.78 161.231 2.813 2.813 6.637 4.394 10.615 4.394s7.793-1.581 10.606-4.394c39.248-39.247 66.78-95.96 66.78-161.231.001-65.256-27.511-121.964-66.78-161.231z"/>
+                </svg>-->
+                <img class="mx-auto h-10 w-auto" width="50px"
+                     src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
+            </div>
+        </div>
+        <ul class="sidebar-list">
+            <!--<li class="sidebar-list-item">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="feather feather-home">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    <span>Home</span>
+                </a>
+            </li>-->
+            <li class="sidebar-list-item active">
+                <a href="servers">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="feather feather-home">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    <span>Servers</span>
+                </a>
+            </li>
+            <li class="sidebar-list-item">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="feather feather-pie-chart">
+                        <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
+                        <path d="M22 12A10 10 0 0 0 12 2v10z"/>
+                    </svg>
+                    <span>Statistics</span>
+                </a>
+            </li>
+        </ul>
+        <form class="space-y-6" th:action="@{/logout}" method="POST">
+            <div class="account-info">
+                <div class="account-info-picture" sec:authorize="hasRole('ADMIN')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Eo_circle_deep-purple_white_letter-a.svg"
+                         alt="Admin Image">
+                </div>
+                <div class="account-info-picture" sec:authorize="hasRole('USER')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Eo_circle_deep-purple_white_letter-u.svg"
+                         alt="User Image">
+                </div>
+                <div class="account-info-name"><span th:text="${#authentication.getName()}"/></div>
+                <button class="account-info-more">
+                    <img src="logout.png" alt="Logout" title="Logout" width="40px" height="40px"/>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="app-content">
+        <div class="app-content-header">
+            <h1 class="app-content-headerText">Statistics</h1>
+        </div>
+        <div style="display: flex; margin-top: 30px;">
+            <div class="wrapper">
+                <div class="panel" style="margin-right: 30px;">
+                    <div class="panel-header">
+                        <div class="calendar-views">
+                            <span>Day</span>
+                            <span>Week</span>
+                            <span>Month</span>
+                        </div>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="categories">
+                            <div class="category">
+                                <span>Avg. Cost/Server</span>
+                                <span>$300</span>
+                            </div>
+                            <div class="category">
+                                <span>Used Servers</span>
+                                <span>90</span>
+                            </div>
+                            <div class="category">
+                                <span>Available Servers</span>
+                                <span>10</span>
+                            </div>
+                        </div>
+
+                        <div class="chart">
+                            <div class="operating-systems" style="width: 600px;">
+              <span class="ios-os" style="width: 200px;">
+                <span></span>Linux Servers
+              </span>
+                                <span class="windows-os" style="width: 200px;">
+                <span></span>Windows Servers
+              </span>
+                                <span class="android-os" style="width: 200px;">
+                <span></span>Databases
+              </span>
+                            </div>
+
+                            <div class="android-stats">
+                                $430<span></span>
+                            </div>
+                            <div class="ios-stats">
+                                <span></span>$200
+                            </div>
+                            <div class="windows-stats">
+                                <span></span>$400
+                            </div>
+
+                            <svg width="563" height="204" class="data-chart" viewBox="0 0 563 204"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <g fill="none" fill-rule="evenodd">
+                                    <path class="dataset-1"
+                                          d="M30.046 97.208c2.895-.84 5.45-2.573 7.305-4.952L71.425 48.52c4.967-6.376 14.218-7.38 20.434-2.217l29.447 34.46c3.846 3.195 9.08 4.15 13.805 2.52l31.014-20.697c4.038-1.392 8.485-.907 12.13 1.32l3.906 2.39c5.03 3.077 11.43 2.753 16.124-.814l8.5-6.458c6.022-4.577 14.563-3.676 19.5 2.056l54.63 55.573c5.622 6.526 15.686 6.647 21.462.258l37.745-31.637c5.217-5.77 14.08-6.32 19.967-1.24l8.955 7.726c5.42 4.675 13.456 4.63 18.82-.11 4.573-4.036 11.198-4.733 16.508-1.735l61.12 34.505c4.88 2.754 10.916 2.408 15.45-.885L563 90.915V204H0v-87.312-12.627c5.62-.717 30.046-6.852 30.046-6.852z"
+                                          fill="#7DC855" opacity=".9"/>
+                                    <path class="dataset-2"
+                                          d="M563 141.622l-21.546-13.87c-3.64-2.343-8.443-1.758-11.408 1.39l-7.565 8.03c-3.813 4.052-10.378 3.688-13.718-.758L469.83 84.58c-3.816-5.08-11.588-4.687-14.867.752l-28.24 46.848c-2.652 4.402-8.48 5.673-12.74 2.78l-15.828-10.76c-3.64-2.475-8.55-1.948-11.575 1.245l-53.21 43.186c-3.148 3.32-8.305 3.74-11.953.974l-100.483-76.2c-3.364-2.55-8.06-2.414-11.27.326l-18.24 15.58c-3.25 2.773-8.015 2.874-11.38.24L159.91 93.79c-3.492-2.733-8.467-2.51-11.697.525l-41.58 39.075c-2.167 2.036-5.21 2.868-8.117 2.218L39.05 112.5c-4.655-1.808-9.95-.292-12.926 3.7L0 137.31V204h563v-62.378z"
+                                          fill="#F8E71C" opacity=".6"/>
+                                    <path class="dataset-3"
+                                          d="M0 155.59v47.415c0 .55.448.995 1 .995h562v-43.105l-40.286 11.83c-3.127.92-6.493.576-9.368-.954l-53.252-28.32c-5.498-2.924-12.323-1.365-15.987 3.654l-25.48 34.902c-4.08 5.59-12.478 5.513-16.455-.148L360.06 121.92c-2.802-4.073-8.2-5.457-12.633-3.237L322.2 133.827c-4.415 2.21-9.792.848-12.604-3.196L282.78 99.25c-4.106-5.906-12.978-5.6-16.665.57l-26.757 44.794c-3.253 5.446-10.753 6.468-15.36 2.092l-16.493-15.673c-4.27-4.058-11.138-3.522-14.72 1.148l-23.167 30.21c-3.722 4.852-10.937 5.207-15.12.744l-44.385-47.345c-5.807-5.427-14.83-5.508-20.734-.19l-55.76 48.31c-3.76 3.26-9.127 3.93-13.582 1.703L0 155.59z"
+                                          fill="#F5A623" opacity=".7"/>
+                                    <path class="lines" fill="#FFF" opacity=".2"
+                                          d="M0 203h563v1H0zM0 153h563v1H0zM0 102h563v1H0zM0 51h563v1H0zM0 0h563v1H0z"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main" style="width: 450px;">
+
+                <div class="header">
+                    <h2>Total Server Costs</h2>
+                    <h3>$3750.50</h3>
+                    <p><span class="fas fa-arrow-up rate"> +5.2% </span> from last month</p>
+                </div>
+
+                <div class="content">
+                    <div class="loader first">Storage<span>95%</span></div>
+                    <div class="loader third">Memory<span>62%</span></div>
+                    <div class="loader second">CPU<span>40%</span></div>
+                </div>
+
+                <div class="footer">
+                    <span>0'''''''</span>
+                    <span>20'''''''</span>
+                    <span>40'''''''</span>
+                    <span>60'''''''</span>
+                    <span>80'''''''</span>
+                    <span>100</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- partial -->
+<script src="script.js"></script>
+
+</body>
+</html>
