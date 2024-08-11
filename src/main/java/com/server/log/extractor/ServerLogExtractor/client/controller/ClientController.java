@@ -52,7 +52,7 @@ public class ClientController {
         clientService.connect();
         return "logs";*/
         return Flux.fromStream(new Random()
-                                       .ints(10)
+                                       .ints(10000)
                                        .mapToObj(value -> {
                                            final int randomPath = (int) (Math.random() * 100);
                                            if (randomPath % 3 == 0) {
@@ -63,7 +63,7 @@ public class ClientController {
                                                return new Date() + " ERROR " + " Transaction " + value + " failed" + "\n";
                                            }
                                        }))
-                   .delayElements(Duration.ofMillis(500));
+                   .delayElements(Duration.ofMillis(300));
     }
 
 }
