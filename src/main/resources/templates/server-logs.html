@@ -34,7 +34,10 @@
     var serverLogs;
 
     function displayServerLogs() {
-        serverLogs = new EventSource("/logs");
+        if(selectedServer.includes("Database"))
+            serverLogs = new EventSource("/logs/database");
+        else
+            serverLogs = new EventSource("/logs");
         $('#TerminalTextArea').empty();
         serverLogs.onmessage = function (event) {
             $('#TerminalTextArea').append(event.data);
