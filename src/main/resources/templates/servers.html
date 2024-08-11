@@ -64,14 +64,16 @@
         <form class="space-y-6" th:action="@{/logout}" method="POST">
             <div class="account-info">
                 <div class="account-info-picture" sec:authorize="hasRole('ADMIN')">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Eo_circle_deep-purple_white_letter-a.svg" alt="Admin Image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Eo_circle_deep-purple_white_letter-a.svg"
+                         alt="Admin Image">
                 </div>
                 <div class="account-info-picture" sec:authorize="hasRole('USER')">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Eo_circle_deep-purple_white_letter-u.svg" alt="User Image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Eo_circle_deep-purple_white_letter-u.svg"
+                         alt="User Image">
                 </div>
                 <div class="account-info-name"><span th:text="${#authentication.getName()}"/></div>
                 <button class="account-info-more">
-                    <img src="logout.png" alt="Logout" title="Logout" width="40px" height="40px" />
+                    <img src="logout.png" alt="Logout" title="Logout" width="40px" height="40px"/>
                 </button>
             </div>
         </form>
@@ -169,7 +171,15 @@
                     Exceptions
                 </div>
             </div>
-            <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row" onclick="location.href='server-logs';" style="cursor: pointer;">
+            <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row"
+                 onclick="
+                 localStorage.setItem('selectedServer', 'Tomcat-US-1');
+                 localStorage.setItem('selectedRegion', 'North America');
+                 localStorage.setItem('selectedUptime', '0d 00:18:31');
+                 localStorage.setItem('selectedRestarts', '0');
+                 localStorage.setItem('selectedExceptions', '2');
+                 location.href='server-logs';"
+                 style="cursor: pointer;">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -223,7 +233,15 @@
                 <div class="product-cell stock"><span class="cell-label">Restarts:</span>2</div>
                 <div class="product-cell price"><span class="cell-label">Exceptions:</span>5</div>
             </div>
-            <div sec:authorize="hasAnyRole('ADMIN')" class="products-row">
+            <div sec:authorize="hasAnyRole('ADMIN')" class="products-row"
+                 onclick="
+                 localStorage.setItem('selectedServer', 'Customer Database');
+                 localStorage.setItem('selectedRegion', 'Europe');
+                 localStorage.setItem('selectedUptime', '10d 01:13:26');
+                 localStorage.setItem('selectedRestarts', '4');
+                 localStorage.setItem('selectedExceptions', '2');
+                 location.href='server-logs';"
+                 style="cursor: pointer;">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -277,7 +295,15 @@
                 <div class="product-cell stock"><span class="cell-label">Restarts:</span>2</div>
                 <div class="product-cell price"><span class="cell-label">Exceptions:</span>41</div>
             </div>
-            <div sec:authorize="hasRole('ADMIN')" class="products-row">
+            <div sec:authorize="hasRole('ADMIN')" class="products-row"
+                 onclick="
+                 localStorage.setItem('selectedServer', 'Orders Database');
+                 localStorage.setItem('selectedRegion', 'North America');
+                 localStorage.setItem('selectedUptime', '12d 09:26:06');
+                 localStorage.setItem('selectedRestarts', '0');
+                 localStorage.setItem('selectedExceptions', '2');
+                 location.href='server-logs';"
+                 style="cursor: pointer;">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -304,7 +330,15 @@
                 <div class="product-cell stock"><span class="cell-label">Restarts:</span>0</div>
                 <div class="product-cell price"><span class="cell-label">Exceptions:</span>2</div>
             </div>
-            <div sec:authorize="hasRole('ADMIN')" class="products-row">
+            <div sec:authorize="hasRole('ADMIN')" class="products-row"
+                 onclick="
+                 localStorage.setItem('selectedServer', 'Employee Database');
+                 localStorage.setItem('selectedRegion', 'Asia');
+                 localStorage.setItem('selectedUptime', '3d 02:33:26');
+                 localStorage.setItem('selectedRestarts', '1');
+                 localStorage.setItem('selectedExceptions', '3');
+                 location.href='server-logs';"
+                 style="cursor: pointer;">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -331,7 +365,15 @@
                 <div class="product-cell stock"><span class="cell-label">Restarts:</span>1</div>
                 <div class="product-cell price"><span class="cell-label">Exceptions:</span>3</div>
             </div>
-            <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row">
+            <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row"
+                 onclick="
+                 localStorage.setItem('selectedServer', 'Tomcat-US-2');
+                 localStorage.setItem('selectedRegion', 'North America');
+                 localStorage.setItem('selectedUptime', '2d 12:44:17');
+                 localStorage.setItem('selectedRestarts', '3');
+                 localStorage.setItem('selectedExceptions', '15');
+                 location.href='server-logs';"
+                 style="cursor: pointer;">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -385,7 +427,15 @@
                 <div class="product-cell stock"><span class="cell-label">Restarts:</span>2</div>
                 <div class="product-cell price"><span class="cell-label">Exceptions:</span>7</div>
             </div>
-            <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row">
+            <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row"
+                 onclick="
+                 localStorage.setItem('selectedServer', 'Tomcat-EU-1');
+                 localStorage.setItem('selectedRegion', 'Europe');
+                 localStorage.setItem('selectedUptime', '1d 17:02:59');
+                 localStorage.setItem('selectedRestarts', '0');
+                 localStorage.setItem('selectedExceptions', '13');
+                 location.href='server-logs';"
+                 style="cursor: pointer;">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -412,7 +462,15 @@
                 <div class="product-cell stock"><span class="cell-label">Restarts:</span>0</div>
                 <div class="product-cell price"><span class="cell-label">Exceptions:</span>13</div>
             </div>
-            <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row">
+            <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row"
+                 onclick="
+                 localStorage.setItem('selectedServer', 'Tomcat-EU-2');
+                 localStorage.setItem('selectedRegion', 'Europe');
+                 localStorage.setItem('selectedUptime', '4d 02:57:23');
+                 localStorage.setItem('selectedRestarts', '6');
+                 localStorage.setItem('selectedExceptions', '31');
+                 location.href='server-logs';"
+                 style="cursor: pointer;">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -463,7 +521,15 @@
                 <div class="product-cell stock"><span class="cell-label">Restarts:</span>3</div>
                 <div class="product-cell price"><span class="cell-label">Exceptions:</span>15</div>
             </div>
-            <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row">
+            <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row"
+                 onclick="
+                 localStorage.setItem('selectedServer', 'Nginx-EU');
+                 localStorage.setItem('selectedRegion', 'Europe');
+                 localStorage.setItem('selectedUptime', '0d 20:42:02');
+                 localStorage.setItem('selectedRestarts', '0');
+                 localStorage.setItem('selectedExceptions', '0');
+                 location.href='server-logs';"
+                 style="cursor: pointer;">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -490,7 +556,15 @@
                 <div class="product-cell stock"><span class="cell-label">Restarts:</span>0</div>
                 <div class="product-cell price"><span class="cell-label">Exceptions:</span>0</div>
             </div>
-            <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row">
+            <div sec:authorize="hasAnyRole('ADMIN', 'USER')" class="products-row"
+                 onclick="
+                 localStorage.setItem('selectedServer', 'Tomcat-US-3');
+                 localStorage.setItem('selectedRegion', 'North America');
+                 localStorage.setItem('selectedUptime', '2d 05:03:14');
+                 localStorage.setItem('selectedRestarts', '2');
+                 localStorage.setItem('selectedExceptions', '32');
+                 location.href='server-logs';"
+                 style="cursor: pointer;">
                 <button class="cell-more-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

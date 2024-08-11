@@ -54,6 +54,33 @@
             serverLogs.close();
         }
     }
+
+    const selectedServer = localStorage.getItem("selectedServer");
+    const selectedRegion = localStorage.getItem("selectedRegion");
+    const selectedUptime = localStorage.getItem("selectedUptime");
+    const selectedRestarts = localStorage.getItem("selectedRestarts");
+    const selectedExceptions = localStorage.getItem("selectedExceptions");
+
+    window.onload = function () {
+        let selectedServerImageName = "";
+        if (selectedServer.includes("Tomcat")) {
+            selectedServerImageName = "tomcat.png";
+        } else if (selectedServer.includes("Nginx")) {
+            selectedServerImageName = "nginx.png";
+        } else if (selectedServer.includes("Apache")) {
+            selectedServerImageName = "apache.png";
+        } else if (selectedServer.includes("Customer")) {
+            selectedServerImageName = "postgres.png";
+        } else if (selectedServer.includes("Orders")) {
+            selectedServerImageName = "oracle.png";
+        } else if (selectedServer.includes("Employee")) {
+            selectedServerImageName = "mysql.png";
+        }
+
+        console.log(selectedServerImageName);
+
+        document.getElementById('selectedServerImage').src = selectedServerImageName;
+    }
 </script>
 <div class="app-container">
     <div class="sidebar">
@@ -116,26 +143,52 @@
 
         <div class="gridView products-row" style="margin-top: 30px; margin-left: 3px;">
             <div class="product-cell image">
-                <img src="tomcat.png"
-                     alt="server">
+                <img src=""
+                     alt="selectedServer" id="selectedServerImage">
             </div>
 
             <div class="gridView product-cell" style="display: block !important; margin: 0 60% 15px 5px; width: 200px">
-                <div class="product-cell"><span class="cell-label">Name:</span>Tomcat-US-1</div>
-                <div class="product-cell"><span class="cell-label">Region:</span>North America</div>
+                <div class="product-cell"><span class="cell-label">Name:</span>
+                    <script type="text/javascript">
+                        document.write(selectedServer)
+                    </script>
+                </div>
+                <div class="product-cell"><span class="cell-label">Region:</span>
+                    <script type="text/javascript">
+                        document.write(selectedRegion)
+                    </script>
+                </div>
                 <div class="product-cell status-cell">
                     <span class="cell-label">Status:</span>
                     <span class="status active">Active</span>
                 </div>
-                <div class="product-cell sales"><span class="cell-label">Uptime:</span>11</div>
-                <div class="product-cell stock"><span class="cell-label">Restarts:</span>36</div>
-                <div class="product-cell price"><span class="cell-label">Exceptions:</span>160</div>
+                <div class="product-cell sales"><span class="cell-label">Uptime:</span>
+                    <script type="text/javascript">
+                        document.write(selectedUptime)
+                    </script>
+                </div>
+                <div class="product-cell stock"><span class="cell-label">Restarts:</span>
+                    <script type="text/javascript">
+                        document.write(selectedRestarts)
+                    </script>
+                </div>
+                <div class="product-cell price"><span class="cell-label">Exceptions:</span>
+                    <script type="text/javascript">
+                        document.write(selectedExceptions)
+                    </script>
+                </div>
             </div>
         </div>
         <div class="button-container">
-            <button onClick="displayServerLogs()">Show Logs</button>
-            <button onClick="stopServerLogs()">Stop Logs</button>
-            <button onClick="clearTextArea()">Clear Logs</button>
+            <button style="margin-right: 5px; font-family: 'Poppins', sans-serif !important; width: 100px; color: #2ba972; cursor: pointer;"
+                    onClick="displayServerLogs()">Show Logs
+            </button>
+            <button style="margin-right: 5px; font-family: 'Poppins', sans-serif !important; width: 100px; color: #F44336; cursor: pointer;"
+                    onClick="stopServerLogs()">Stop Logs
+            </button>
+            <button style="margin-right: 5px; font-family: 'Poppins', sans-serif !important; width: 100px; color: #1569d5; cursor: pointer;"
+                    onClick="clearTextArea()">Clear Logs
+            </button>
         </div>
         <div>
             <textarea id="TerminalTextArea"
