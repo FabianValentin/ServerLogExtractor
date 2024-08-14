@@ -68,7 +68,7 @@ public class ClientController {
                                            } else if (randomNumber == 6) {
                                                return new Date() + " ERROR id=CRMVC0007E Message=The projects could not be loaded" + "\n";
                                            } else if (randomNumber == 7) {
-                                               return new Date() + " ERROR id=CRMVC0009E Message=There was a problem communicating with the server" + "\n";
+                                               return new Date() + " INFO id=CRMVC0009E Message=There was a problem communicating with the server" + "\n";
                                            } else {
                                                return new Date() + " INFO id=CRRGW0143I Message=Set authentication server URL" + "\n";
                                            }
@@ -88,17 +88,17 @@ public class ClientController {
                                            } else if (randomNumber == 1) {
                                                return new Date() + " DEBUG id=CRRTC4644E Message=The connection to CQ database failed" + "\n";
                                            } else if (randomNumber == 2){
-                                               return new Date() + " ERROR id=CRJAZ1850E Message=Unable to save the consumer key and secret into the application's database" + "\n";
+                                               return new Date() + " INFO id=CRJAZ1850E Message=Unable to save the consumer key and secret into the application's database" + "\n";
                                            } else if (randomNumber == 3) {
                                                return new Date() + " ERROR id=CRRRS2048E Message=An error occurred while upgrading the RM application to use components" + "\n";
                                            } else if (randomNumber == 4) {
                                                return new Date() + " ERROR id=CRRRS9603W Message=The database is not configured properly. Run the setup utility" + "\n";
                                            } else if (randomNumber == 5) {
-                                               return new Date() + " INFO id=CRRRW7551E Message=The requested artifact cannot be found" + "\n";
+                                               return new Date() + " DEBUG id=CRRRW7551E Message=The requested artifact cannot be found" + "\n";
                                            } else if (randomNumber == 7) {
                                                return new Date() + " INFO id=CRRTC1009W Message=The plan cannot be migrated because the plan name is empty" + "\n";
                                            }  else if (randomNumber == 8) {
-                                               return new Date() + " ERROR id=CRRTC5099E Message=The database could not be reached." + "\n";
+                                               return new Date() + " INFO id=CRRTC5099E Message=The database could not be reached." + "\n";
                                            } else {
                                                return new Date() + " INFO id=CRRGW0062I Message=Shutting down the model database" + "\n";
                                            }
